@@ -5,7 +5,7 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 ARG GIT_COMMIT=unspecified
 LABEL git_commit=$GIT_COMMIT
 # Run this command to find git commit:-
-#docker inspect quay.io/shazchaudhry/docker-jenkins | jq '.[].ContainerConfig.Labels'
+docker inspect quay.io/shazchaudhry/docker-jenkins | jq '.[].ContainerConfig.Labels'
 
 # Configure Jenkins
 COPY config/*.xml $JENKINS_HOME/
